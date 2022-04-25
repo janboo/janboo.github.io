@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>vlmcsd</Name>
+  <Repository>mikolatero/vlmcsd</Repository>
+  <Registry>https://hub.docker.com/r/mikolatero/vlmcsd</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://github.com/Wind4/vlmcsd</Project>
+  <Overview>Windows Active Server By KMS</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <Icon>https://aia.xinran.cf/unraid/docker-icons/aliyundrive.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <Description>Windows Active Server By KMS</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1688</HostPort>
+        <ContainerPort>1688</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="Port1" Target="1688" Default="" Mode="tcp" Description="Container: 1688" Type="Port" Display="always" Required="false" Mask="false">1688</Config>
+</Container>

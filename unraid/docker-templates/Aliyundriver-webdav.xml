@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Aliyundrive-webdav</Name>
+  <Repository>messense/aliyundrive-webdav</Repository>
+  <Registry>https://hub.docker.com/r/messense/aliyundrive-webdav</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://github.com/messense/aliyundrive-webdav</Project>
+  <Overview>Aliyundrive-webdav | A aliyundrive webdav Docker image.</Overview>
+  <Category>Cloud: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8085]</WebUI>
+  <Icon>https://aia.xinran.cf/unraid/docker-icons/aliyundrive.png</Icon>
+  <Description>Aliyundrive-webdav | A aliyundrive webdav Docker image.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8085</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Aliyundrive-webdav</HostDir>
+      <ContainerDir>/etc/aliyundrive-webdav</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>admin</Value>
+      <Name>WEBDAV_AUTH_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin</Value>
+      <Name>WEBDAV_AUTH_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>REFRESH_TOKEN</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Refresh Token" Target="REFRESH_TOKEN" Default="" Mode="" Description="Login Aliyundrive for REFRESH_TOKEN.&#13;&#10;" Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+  <Config Name="WebDAV authentication username" Target="WEBDAV_AUTH_USER" Default="admin" Mode="" Description="WebDAV authentication username.&#13;&#10; Default: admin" Type="Variable" Display="always-hide" Required="true" Mask="false">admin</Config>
+  <Config Name="WebDAV authentication password" Target="WEBDAV_AUTH_PASSWORD" Default="admin" Mode="" Description="WebDAV authentication password, Default: admin" Type="Variable" Display="always-hide" Required="true" Mask="true">admin</Config>
+  <Config Name="Aliyundrive-webdav Listen Port" Target="8080" Default="8085" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8085</Config>
+  <Config Name="AppData Config Path" Target="/etc/aliyundrive-webdav" Default="/mnt/user/appdata/Aliyundrive-webdav" Mode="rw" Description="Container Path: /etc/aliyundrive-webdav" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/Aliyundrive-webdav</Config>
+</Container>
